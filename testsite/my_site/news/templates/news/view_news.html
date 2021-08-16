@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ news_item.title }} / {{ block.super }}
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="card mb-3">
+    <div class="card-header">
+        Категория: <a href="{{ news_item.category.get_absolute_url }}">{{ news_item.category }}</a>
+    </div>
+    <div class="card-body">
+        <div class="media">
+            {% if news_item.photo %}
+            <p><img src="{{ news_item.photo.url }}" height=300" width="480"></p>
+            {% else %}
+            <p><img src="https://cvfrental.ru/wp-content/themes/premium-5/images/placeholder.png" height=300"
+                    width="480"></p>
+            {% endif %}
+            <div class="media_body">
+                <h5 class="card-title">{{ news_item.title }}</h5>
+                <p class="card-text">{{ news_item.content|linebreaks }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-muted">
+        {{ news_item.created_at|date:"Y.m.d H:i" }}<br>
+        {{ news_item.created_at|timesince }}
+    </div>
+</div>
+{% endblock %}
