@@ -8,10 +8,10 @@ class News(models.Model):
         verbose_name='Название новости',
         help_text='Не более 130-ти символов'
     )
-    content = models.TextField(verbose_name='Текст новости')
+    content = models.TextField(verbose_name='Текст')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
-    photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True, verbose_name='Фото')
+    photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True, verbose_name='Загрузить фото')
     is_published = models.BooleanField(default=False, verbose_name='Опубликованно')
     category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True, verbose_name='Категория')
 

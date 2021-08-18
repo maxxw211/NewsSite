@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавлнеие новости / {{ block.super }}
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<h1>Добавлнеие новости</h1>
+
+<form enctype="multipart/form-data" method="post" action="{% url 'add-news' %}">
+        {% csrf_token %}
+
+    {% comment %}
+    <p>{{ form.as_p }}</p>
+    {% endcomment %}
+
+    {{ form.non_field.errors }}
+    {% for field in form %}
+    <div class="form-group">
+        {{ field.label_tag }}
+        <p>{{ field }}</p>
+        <div class="invalid-feedback">
+            {{ field.errors }}
+        </div>
+    </div>
+    {% endfor %}
+
+    <p><button type="submit" class="btn btn-primary btn-block">Добавить новость</button></p>
+</form>
+
+{% endblock %}
