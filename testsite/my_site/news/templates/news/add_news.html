@@ -12,7 +12,7 @@
 <h1>Добавлнеие новости</h1>
 
 <form enctype="multipart/form-data" method="post" action="{% url 'add-news' %}">
-        {% csrf_token %}
+    {% csrf_token %}
 
     {% comment %}
     <p>{{ form.as_p }}</p>
@@ -29,7 +29,9 @@
     </div>
     {% endfor %}
 
-    <p><button type="submit" class="btn btn-primary btn-block">Добавить новость</button></p>
+    <p>
+        <button type="submit" class="btn btn-primary btn-block">Добавить новость</button>
+    </p>
 </form>
 
 {% endblock %}

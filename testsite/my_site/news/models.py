@@ -12,7 +12,7 @@ class News(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
     photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True, verbose_name='Загрузить фото')
-    is_published = models.BooleanField(default=False, verbose_name='Опубликованно')
+    is_published = models.BooleanField(default=False, verbose_name='Опубликовано')
     category = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name='Категория')
 
     def get_absolute_url(self):

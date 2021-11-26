@@ -74,7 +74,7 @@ class AddNews(CreateView):
 # def add_news(request):
 #    if request.method == 'POST':
 #        form = NewsForm(request.POST, request.FILES)
-#       if form.is_valid():
+#        if form.is_valid():
 #            # news_form = News.objects.create(**form.cleaned_data)
 #            news_form = form.save()
 #           return redirect(news_form)

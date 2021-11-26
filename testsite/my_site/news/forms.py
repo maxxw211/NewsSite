@@ -14,7 +14,7 @@ from django.core.exceptions import ValidationError
 #                                                           'rows': 4})
 #                              )
 #    photo = forms.ImageField(required=False, label='Загрузить фото')
-#    category = forms.ModelChoiceField(empty_label='Выберите категории',
+#    category = forms.ModelChoiceField(empty_label='Выберите категорию',
 #                                      queryset=Category.objects.all(),
 #                                      label='Категория',
 #                                      widget=forms.Select(attrs={'class': 'form-control'})
