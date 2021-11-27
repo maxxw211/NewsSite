@@ -1,5 +1,5 @@
 from django import forms
-from news.models import Category, News
+from news.models import News
 import re
 from django.core.exceptions import ValidationError
 
@@ -33,5 +33,5 @@ class NewsForm(forms.ModelForm):
     # def clean_title(self):
     #    title = self.cleaned_data['title']
     #    if re.match(r'\d', title):
-    #        raise ValidationError('Название не должно начиться с цифры')
+    #        raise ValidationError('Название не должно начинаться с цифры')
     #    return title
