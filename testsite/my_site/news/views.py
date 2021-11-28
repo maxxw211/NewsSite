@@ -10,7 +10,7 @@ class HomeNewsPage(ListView):
     context_object_name = 'news'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super(HomeNewsPage, self).get_context_data(**kwargs)
         context['title'] = 'Главная страница'
         return context
 
@@ -65,6 +65,7 @@ class ViewNews(DetailView):
 #    news_item = get_object_or_404(News, pk=news_id)
 #    context = {'news_item': news_item}
 #    return render(request, template_name='news/view_news.html', context=context)
+
 
 
 class AddNews(CreateView):
